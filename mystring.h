@@ -36,6 +36,9 @@ class MyString {
 	// get-from operator
 	friend istream& operator>>(istream& is, MyString& s);
 
+	// < operator
+	friend int operator<(const char* l,const MyString& r) const;
+
 	// operator[]
 	char& operator[](int i);
 

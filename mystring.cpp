@@ -153,7 +153,7 @@ const char& MyString::operator[](int i) const
 
 
 //operator< 
-int MyString::operator<(const char* l,MyString& r) const
+int MyString::operator<(const char* l,const MyString& r) const
 {
 //comparison should be lexicographical
 //convert l to MyString temporarily
