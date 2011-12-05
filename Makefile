@@ -1,5 +1,5 @@
 CC  = g++
-CXX = g++ -O0 -fno-elide-constructors
+CXX = g++ -O0 
 
 # Comment out one of the following 2 lines to enable/disable BASIC4TRACE.
 INCLUDES = -DBASIC4TRACE

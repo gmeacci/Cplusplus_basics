@@ -151,3 +151,41 @@ const char& MyString::operator[](int i) const
     return ((MyString&)*this)[i];
 }
 
+
+//operator< 
+int MyString::operator<(const char* l,MyString& r) const
+{
+//comparison should be lexicographical
+//convert l to MyString temporarily
+MyString temp(l);  //construct stack MyString object with l
+
+//compare lexicographically for the longest string
+if(l.len > r.len)
+{
+	for(int i=0; i<l.len; i++)
+	{	
+		if(l[i]<r[i])
+		return 1;   //lhs IS less than rhs
+		
+		else if(l[i]>r[i])
+		return 0;  //lhs IS greater than rhs
+		//otherwise keep iterating if elements of two strings are equal
+	}
+}
+
+else if(r.len >= l.len)
+{
+	for(int i=0; i<r.len; i++)
+	{
+		if(l[i]<r[i])
+		return 1;   //lhs IS less than rhs
+	
+		else if(l[i]>r[i])
+		return 0;  //lhs IS greater than rhs
+
+		//otherwise keep iterating if elements of two strings are equal
+	}
+}
+//if all elements are the same , return false ,0
+return 0;
+}
