@@ -37,7 +37,26 @@ class MyString {
 	friend istream& operator>>(istream& is, MyString& s);
 
 	// < operator
-	friend int operator<(const char* l,const MyString& r) const;
+	friend int operator<(const char* l,const MyString& r);
+
+	friend int operator<(const MyString& r,const char* l); 
+
+	friend int operator<(const MyString& l,const MyString& r); 
+
+	// >operator
+	friend int operator>(const MyString& l,const MyString& r); 
+
+	friend int operator>(const MyString& r,const char* l);
+
+	friend int operator>(const char* l,const MyString& r); 
+
+        friend int operator==(const char* l, const MyString& r);
+	
+	friend int operator==(const MyString& l,const MyString& r);
+	
+	friend int operator==(const MyString& r,const char* l);
+
+
 
 	// operator[]
 	char& operator[](int i);
