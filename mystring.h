@@ -50,11 +50,19 @@ class MyString {
 
 	friend int operator>(const char* l,const MyString& r); 
 
-        friend int operator==(const char* l, const MyString& r);
+        // ==operator
+	friend int operator==(const char* l, const MyString& r);
 	
 	friend int operator==(const MyString& l,const MyString& r);
 	
 	friend int operator==(const MyString& r,const char* l);
+	
+	// !=operator
+	friend int operator!=(const MyString& l,const MyString& r);
+
+	friend int operator!=(const MyString& r,const char* l);
+
+	friend int operator!=(const char* l, const MyString& r);
 
 
 

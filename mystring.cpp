@@ -434,3 +434,59 @@ int operator==(const MyString& l,const MyString& r)
 return 1; //strings are equal if they are same size and all characters are equal individually
 }
 
+
+//operator !=
+int operator!=(const char* l, const MyString& r)
+{
+	//convert c style string to MyString type
+	MyString temp(l);
+	int a=0;	
+
+	if(temp.len!=r.len) return 1;   //length is different, strings cant be equal
+
+	for(int i=0; i<temp.len; i++)
+	{
+		if(temp[i]==r[i])a++;
+	}
+if(a==temp.len) return 0; //each char in both strings is equal
+
+return 1; //strings are equal if they are same size and all characters are equal individually
+}
+
+
+//operator !=
+int operator!=(const MyString& r,const char* l)
+{
+	//convert c style string to MyString type
+	MyString temp(l);
+	int a=0;
+
+	if(temp.len!=r.len) return 1;   //length is different, strings cant be equal
+
+	for(int i=0; i<temp.len; i++)
+	{
+		if(temp[i]==r[i])a++;
+	}
+if(a==temp.len) return 0;
+
+return 1; //strings are equal if they are same size and all characters are equal individually
+}
+
+
+//operator !=
+int operator!=(const MyString& l,const MyString& r)
+{
+
+	int a=0;
+	if(l.len!=r.len) return 1;   //length is different, strings cant be equal
+	
+	for(int i=0; i<l.len; i++)
+	{
+		if(l[i]==r[i])a++;
+	}
+if(a==l.len) return 0;
+
+return 1; //strings are equal if they are same size and all characters are equal individually
+}
+
+
