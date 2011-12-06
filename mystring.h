@@ -24,6 +24,12 @@ class MyString {
 	// assignment operator
 	MyString& operator=(const MyString& s);
 
+	//+= operator
+//	MyString& operator+=(char* r);
+
+	MyString& operator+=(const MyString& r);
+
+
 	// returns the length of the string
 	int length() const { return len; }
 	
@@ -64,7 +70,20 @@ class MyString {
 
 	friend int operator!=(const char* l, const MyString& r);
 
+	// <=operator 
+	friend int operator<=(const char* l,const MyString& r);
+	
+	friend int operator<=(const MyString& r,const char* l);
+	
+	friend int operator<=(const MyString& l,const MyString& r); 
 
+	// >=operator
+	friend int operator>=(const char* l,const MyString& r);
+
+	friend int operator>=(const MyString& r,const char* l);
+
+	friend int operator>=(const MyString& l,const MyString& r); 
+	
 
 	// operator[]
 	char& operator[](int i);

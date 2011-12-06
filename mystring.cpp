@@ -96,17 +96,12 @@ MyString operator+(const MyString& s1, const MyString& s2)
 	    "BASIC4TRACE: op+(const MyString&, const MyString&)\n");
 #endif
 
-    MyString temp;
 
-    delete[] temp.data;
+    	MyString temp; //create MyString stack variable with default constructor. Default destr will be called after return.
 
-    temp.len = s1.len + s2.len;
+	temp+=s1; temp+=s2;   //call += twice
 
-    temp.data = new char[temp.len+1];
-    strcpy(temp.data, s1.data);
-    strcat(temp.data, s2.data);
-
-    return temp;
+    return temp;       //return temp by copy since we want + operator to yield an lvalue in practice 
 }
 
 // put-to operator
@@ -490,3 +485,265 @@ return 1; //strings are equal if they are same size and all characters are equal
 }
 
 
+//operator< not a member function of MyString so do not use scope operator on name
+int operator<=(const char* l,const MyString& r) 
+{
+//comparison should be lexicographical
+//convert l to MyString temporarily
+MyString temp(l);  //construct stack MyString object with l
+
+//compare lexicographically for the longest string
+if(temp.len > r.len)
+{
+	for(int i=0; i<temp.len; i++)
+	{	
+		if(temp[i]<r[i])
+		return 1;   //lhs IS less than rhs
+		
+		else if(temp[i]>r[i])
+		return 0;  //lhs IS greater than rhs
+		//otherwise keep iterating if elements of two strings are equal
+	}
+}
+
+else if(r.len >= temp.len)
+{
+	for(int i=0; i<r.len; i++)
+	{
+		if(temp[i]<r[i])
+		return 1;   //lhs IS less than rhs
+	
+		else if(temp[i]>r[i])
+		return 0;  //lhs IS greater than rhs
+
+		//otherwise keep iterating if elements of two strings are equal
+	}
+}
+//if all elements are the same , return false ,0
+return 1;
+}
+
+
+
+//operator< not a member function of MyString so do not use scope operator on name
+int operator<=(const MyString& r,const char* l) 
+{
+//comparison should be lexicographical
+//convert l to MyString temporarily
+MyString temp(l);  //construct stack MyString object with l
+
+//compare lexicographically for the longest string
+if(temp.len > r.len)
+{
+	for(int i=0; i<temp.len; i++)
+	{	
+		if(temp[i]>r[i])
+		return 1;   //lhs IS less than rhs
+		
+		else if(temp[i]<r[i])
+		return 0;  //lhs IS greater than rhs
+		//otherwise keep iterating if elements of two strings are equal
+	}
+}
+
+else if(r.len >= temp.len)
+{
+	for(int i=0; i<r.len; i++)
+	{
+		if(temp[i]>r[i])
+		return 1;   //lhs IS less than rhs
+	
+		else if(temp[i]<r[i])
+		return 0;  //lhs IS greater than rhs
+
+		//otherwise keep iterating if elements of two strings are equal
+	}
+}
+//if all elements are the same , return false ,0
+return 1;
+}
+
+
+//operator< not a member function of MyString so do not use scope operator on name
+int operator<=(const MyString& l,const MyString& r) 
+{
+//comparison should be lexicographical
+//convert l to MyString temporarily
+
+//compare lexicographically for the longest string
+if(l.len > r.len)
+{
+	for(int i=0; i<l.len; i++)
+	{	
+		if(l[i]<r[i])
+		return 1;   //lhs IS less than rhs
+		
+		else if(l[i]>r[i])
+		return 0;  //lhs IS greater than rhs
+		//otherwise keep iterating if elements of two strings are equal
+	}
+}
+
+else if(r.len >= l.len)
+{
+	for(int i=0; i<r.len; i++)
+	{
+		if(l[i]<r[i])
+		return 1;   //lhs IS less than rhs
+	
+		else if(l[i]>r[i])
+		return 0;  //lhs IS greater than rhs
+
+		//otherwise keep iterating if elements of two strings are equal
+	}
+}
+//if all elements are the same , return false ,0
+return 1;
+}
+
+
+
+
+//operator> not a member function of MyString so do not use scope operator on name
+int operator>=(const char* l,const MyString& r) 
+{
+//comparison should be lexicographical
+//convert l to MyString temporarily
+MyString temp(l);  //construct stack MyString object with l
+
+//compare lexicographically for the longest string
+if(temp.len > r.len)
+{
+	for(int i=0; i<temp.len; i++)
+	{	
+		if(temp[i]>r[i])
+		return 1;   //lhs IS less than rhs
+		
+		else if(temp[i]<r[i])
+		return 0;  //lhs IS greater than rhs
+		//otherwise keep iterating if elements of two strings are equal
+	}
+}
+
+else if(r.len >= temp.len)
+{
+	for(int i=0; i<r.len; i++)
+	{
+		if(temp[i]>r[i])
+		return 1;   //lhs IS less than rhs
+	
+		else if(temp[i]<r[i])
+		return 0;  //lhs IS greater than rhs
+
+		//otherwise keep iterating if elements of two strings are equal
+	}
+}
+//if all elements are the same , return false ,0
+return 1;
+}
+
+
+
+
+//operator< not a member function of MyString so do not use scope operator on name
+int operator>=(const MyString& r,const char* l) 
+{
+//comparison should be lexicographical
+//convert l to MyString temporarily
+MyString temp(l);  //construct stack MyString object with l
+
+//compare lexicographically for the longest string
+if(temp.len > r.len)
+{
+	for(int i=0; i<temp.len; i++)
+	{	
+		if(temp[i]<r[i])
+		return 1;   //lhs IS less than rhs
+		
+		else if(temp[i]>r[i])
+		return 0;  //lhs IS greater than rhs
+		//otherwise keep iterating if elements of two strings are equal
+	}
+}
+
+else if(r.len >= temp.len)
+{
+	for(int i=0; i<r.len; i++)
+	{
+		if(temp[i]<r[i])
+		return 1;   //lhs IS less than rhs
+	
+		else if(temp[i]>r[i])
+		return 0;  //lhs IS greater than rhs
+
+		//otherwise keep iterating if elements of two strings are equal
+	}
+}
+//if all elements are the same , return false ,0
+return 1;
+}
+
+
+//operator< not a member function of MyString so do not use scope operator on name
+int operator>=(const MyString& l,const MyString& r) 
+{
+//comparison should be lexicographical
+//convert l to MyString temporarily
+
+//compare lexicographically for the longest string
+if(l.len > r.len)
+{
+	for(int i=0; i<l.len; i++)
+	{	
+		if(l[i]>r[i])
+		return 1;   //lhs IS less than rhs
+		
+		else if(l[i]<r[i])
+		return 0;  //lhs IS greater than rhs
+		//otherwise keep iterating if elements of two strings are equal
+	}
+}
+
+else if(r.len >= l.len)
+{
+	for(int i=0; i<r.len; i++)
+	{
+		if(l[i]>r[i])
+		return 1;   //lhs IS less than rhs
+	
+		else if(l[i]<r[i])
+		return 0;  //lhs IS greater than rhs
+
+		//otherwise keep iterating if elements of two strings are equal
+	}
+}
+//if all elements are the same , return false ,0
+return 1;
+}
+
+
+
+MyString& MyString::operator+=(const MyString& r)
+{
+
+	if(len==0)
+	{*this=r; return *this;}
+	
+	else
+	{
+	char* temp = new char[strlen(data)+1];   //store existing data from lhs in temp var
+	strcpy(temp,data);
+
+	delete[] data;   //make data large enough to hold concatenated string by erasing lhs data
+	int clen= strlen(temp) + strlen(r.data);
+	data = new char[clen+1]; //recreate data via empty heap allocation of proper no. bytes
+	strcpy(data,temp); 	//first copy temp into data since data contains garbage values (uninitialized)
+				//strcat assumes data is large enoguh memory block to fit concatenated string
+	strcat(data,r.data);
+	len=strlen(data);
+
+	delete[] temp;
+
+	return *this;
+	}
+}
