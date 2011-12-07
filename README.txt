@@ -139,7 +139,7 @@ Part 2 VALGRIND TESTING
 ==6782== Memcheck, a memory error detector
 ==6782== Copyright (C) 2002-2009, and GNU GPL'd, by Julian Seward et al.
 ==6782== Using Valgrind-3.6.0.SVN-Debian and LibVEX; rerun with -h for copyright info
-==6782== Command: ./mytest
+==6782== Command: ./testdriver
 ==6782== 
 BASIC4TRACE: (0x7ff000970)->MyString(const char *)
 BASIC4TRACE: (0x7ff000960)->MyString(const char *)
