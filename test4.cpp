@@ -1,6 +1,6 @@
 #include "mystring.h"
 
-static MyString add(MyString s1, MyString s2)
+static MyString add(const MyString& s1, const MyString& s2)
 {
     MyString temp(" and ");
     return s1 + temp + s2;
