@@ -146,7 +146,7 @@ const char& MyString::operator[](int i) const
     return ((MyString&)*this)[i];
 }
 
-
+/*
 //operator< not a member function of MyString so do not use scope operator on name
 int operator<(const char* l,const MyString& r) 
 {
@@ -184,9 +184,9 @@ else if(r.len >= temp.len)
 //if all elements are the same , return false ,0
 return 0;
 }
+*/
 
-
-
+/*
 //operator< not a member function of MyString so do not use scope operator on name
 int operator<(const MyString& r,const char* l) 
 {
@@ -224,7 +224,7 @@ else if(r.len >= temp.len)
 //if all elements are the same , return false ,0
 return 0;
 }
-
+*/
 
 //operator< not a member function of MyString so do not use scope operator on name
 int operator<(const MyString& l,const MyString& r) 
@@ -265,7 +265,7 @@ return 0;
 
 
 
-
+/*
 //operator> not a member function of MyString so do not use scope operator on name
 int operator>(const char* l,const MyString& r) 
 {
@@ -304,9 +304,9 @@ else if(r.len >= temp.len)
 return 0;
 }
 
+*/
 
-
-
+/*
 //operator< not a member function of MyString so do not use scope operator on name
 int operator>(const MyString& r,const char* l) 
 {
@@ -344,7 +344,7 @@ else if(r.len >= temp.len)
 //if all elements are the same , return false ,0
 return 0;
 }
-
+*/
 
 //operator< not a member function of MyString so do not use scope operator on name
 int operator>(const MyString& l,const MyString& r) 
@@ -382,7 +382,7 @@ else if(r.len >= l.len)
 //if all elements are the same , return false ,0
 return 0;
 }
-
+/*
 //operator ==
 int operator==(const char* l, const MyString& r)
 {
@@ -398,7 +398,9 @@ int operator==(const char* l, const MyString& r)
 
 return 1; //strings are equal if they are same size and all characters are equal individually
 }
+*/
 
+/*
 //operator ==
 int operator==(const MyString& r,const char* l)
 {
@@ -414,6 +416,7 @@ int operator==(const MyString& r,const char* l)
 
 return 1; //strings are equal if they are same size and all characters are equal individually
 }
+*/
 
 //operator ==
 int operator==(const MyString& l,const MyString& r)
@@ -429,7 +432,7 @@ int operator==(const MyString& l,const MyString& r)
 return 1; //strings are equal if they are same size and all characters are equal individually
 }
 
-
+/*
 //operator !=
 int operator!=(const char* l, const MyString& r)
 {
@@ -447,7 +450,9 @@ if(a==temp.len) return 0; //each char in both strings is equal
 
 return 1; //strings are equal if they are same size and all characters are equal individually
 }
+*/
 
+/*
 
 //operator !=
 int operator!=(const MyString& r,const char* l)
@@ -466,7 +471,7 @@ if(a==temp.len) return 0;
 
 return 1; //strings are equal if they are same size and all characters are equal individually
 }
-
+*/
 
 //operator !=
 int operator!=(const MyString& l,const MyString& r)
@@ -484,7 +489,7 @@ if(a==l.len) return 0;
 return 1; //strings are equal if they are same size and all characters are equal individually
 }
 
-
+/*
 //operator< not a member function of MyString so do not use scope operator on name
 int operator<=(const char* l,const MyString& r) 
 {
@@ -522,9 +527,9 @@ else if(r.len >= temp.len)
 //if all elements are the same , return false ,0
 return 1;
 }
+*/
 
-
-
+/*
 //operator< not a member function of MyString so do not use scope operator on name
 int operator<=(const MyString& r,const char* l) 
 {
@@ -562,7 +567,7 @@ else if(r.len >= temp.len)
 //if all elements are the same , return false ,0
 return 1;
 }
-
+*/
 
 //operator< not a member function of MyString so do not use scope operator on name
 int operator<=(const MyString& l,const MyString& r) 
@@ -603,7 +608,7 @@ return 1;
 
 
 
-
+/*
 //operator> not a member function of MyString so do not use scope operator on name
 int operator>=(const char* l,const MyString& r) 
 {
@@ -641,10 +646,10 @@ else if(r.len >= temp.len)
 //if all elements are the same , return false ,0
 return 1;
 }
+*/
 
 
-
-
+/*
 //operator< not a member function of MyString so do not use scope operator on name
 int operator>=(const MyString& r,const char* l) 
 {
@@ -682,6 +687,8 @@ else if(r.len >= temp.len)
 //if all elements are the same , return false ,0
 return 1;
 }
+
+*/
 
 
 //operator< not a member function of MyString so do not use scope operator on name

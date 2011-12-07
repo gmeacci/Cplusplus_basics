@@ -11,8 +11,8 @@ CXXFLAGS = -g -Wall $(INCLUDES)
 LDFLAGS = -g
 LDLIBS  =
 
-executables = test1 test2 test3 test4
-objects = mystring.o test1.o test2.o test3.o test4.o
+executables = test1 test2 test3 test4 testdriver
+objects = mystring.o test1.o test2.o test3.o test4.o testdriver.o
 
 .PHONY: default
 default: $(executables)
