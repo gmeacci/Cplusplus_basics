@@ -147,83 +147,9 @@ const char& MyString::operator[](int i) const
 }
 
 /*
-//operator< not a member function of MyString so do not use scope operator on name
-int operator<(const char* l,const MyString& r) 
-{
-//comparison should be lexicographical
-//convert l to MyString temporarily
-MyString temp(l);  //construct stack MyString object with l
-
-//compare lexicographically for the longest string
-if(temp.len > r.len)
-{
-	for(int i=0; i<temp.len; i++)
-	{	
-		if(temp[i]<r[i])
-		return 1;   //lhs IS less than rhs
-		
-		else if(temp[i]>r[i])
-		return 0;  //lhs IS greater than rhs
-		//otherwise keep iterating if elements of two strings are equal
-	}
-}
-
-else if(r.len >= temp.len)
-{
-	for(int i=0; i<r.len; i++)
-	{
-		if(temp[i]<r[i])
-		return 1;   //lhs IS less than rhs
-	
-		else if(temp[i]>r[i])
-		return 0;  //lhs IS greater than rhs
-
-		//otherwise keep iterating if elements of two strings are equal
-	}
-}
-//if all elements are the same , return false ,0
-return 0;
-}
 */
 
 /*
-//operator< not a member function of MyString so do not use scope operator on name
-int operator<(const MyString& r,const char* l) 
-{
-//comparison should be lexicographical
-//convert l to MyString temporarily
-MyString temp(l);  //construct stack MyString object with l
-
-//compare lexicographically for the longest string
-if(temp.len > r.len)
-{
-	for(int i=0; i<temp.len; i++)
-	{	
-		if(temp[i]>r[i])
-		return 1;   //lhs IS less than rhs
-		
-		else if(temp[i]<r[i])
-		return 0;  //lhs IS greater than rhs
-		//otherwise keep iterating if elements of two strings are equal
-	}
-}
-
-else if(r.len >= temp.len)
-{
-	for(int i=0; i<r.len; i++)
-	{
-		if(temp[i]>r[i])
-		return 1;   //lhs IS less than rhs
-	
-		else if(temp[i]<r[i])
-		return 0;  //lhs IS greater than rhs
-
-		//otherwise keep iterating if elements of two strings are equal
-	}
-}
-//if all elements are the same , return false ,0
-return 0;
-}
 */
 
 //operator< not a member function of MyString so do not use scope operator on name
@@ -266,84 +192,9 @@ return 0;
 
 
 /*
-//operator> not a member function of MyString so do not use scope operator on name
-int operator>(const char* l,const MyString& r) 
-{
-//comparison should be lexicographical
-//convert l to MyString temporarily
-MyString temp(l);  //construct stack MyString object with l
-
-//compare lexicographically for the longest string
-if(temp.len > r.len)
-{
-	for(int i=0; i<temp.len; i++)
-	{	
-		if(temp[i]>r[i])
-		return 1;   //lhs IS less than rhs
-		
-		else if(temp[i]<r[i])
-		return 0;  //lhs IS greater than rhs
-		//otherwise keep iterating if elements of two strings are equal
-	}
-}
-
-else if(r.len >= temp.len)
-{
-	for(int i=0; i<r.len; i++)
-	{
-		if(temp[i]>r[i])
-		return 1;   //lhs IS less than rhs
-	
-		else if(temp[i]<r[i])
-		return 0;  //lhs IS greater than rhs
-
-		//otherwise keep iterating if elements of two strings are equal
-	}
-}
-//if all elements are the same , return false ,0
-return 0;
-}
-
 */
 
 /*
-//operator< not a member function of MyString so do not use scope operator on name
-int operator>(const MyString& r,const char* l) 
-{
-//comparison should be lexicographical
-//convert l to MyString temporarily
-MyString temp(l);  //construct stack MyString object with l
-
-//compare lexicographically for the longest string
-if(temp.len > r.len)
-{
-	for(int i=0; i<temp.len; i++)
-	{	
-		if(temp[i]<r[i])
-		return 1;   //lhs IS less than rhs
-		
-		else if(temp[i]>r[i])
-		return 0;  //lhs IS greater than rhs
-		//otherwise keep iterating if elements of two strings are equal
-	}
-}
-
-else if(r.len >= temp.len)
-{
-	for(int i=0; i<r.len; i++)
-	{
-		if(temp[i]<r[i])
-		return 1;   //lhs IS less than rhs
-	
-		else if(temp[i]>r[i])
-		return 0;  //lhs IS greater than rhs
-
-		//otherwise keep iterating if elements of two strings are equal
-	}
-}
-//if all elements are the same , return false ,0
-return 0;
-}
 */
 
 //operator< not a member function of MyString so do not use scope operator on name
@@ -383,39 +234,9 @@ else if(r.len >= l.len)
 return 0;
 }
 /*
-//operator ==
-int operator==(const char* l, const MyString& r)
-{
-	//convert c style string to MyString type
-	MyString temp(l);
-
-	if(temp.len!=r.len) return 0;   //length is different, strings cant be equal
-
-	for(int i=0; i<temp.len; i++)
-	{
-		if(temp[i]!=r[i])return 0;
-	}
-
-return 1; //strings are equal if they are same size and all characters are equal individually
-}
 */
 
 /*
-//operator ==
-int operator==(const MyString& r,const char* l)
-{
-	//convert c style string to MyString type
-	MyString temp(l);
-
-	if(temp.len!=r.len) return 0;   //length is different, strings cant be equal
-
-	for(int i=0; i<temp.len; i++)
-	{
-		if(temp[i]!=r[i])return 0;
-	}
-
-return 1; //strings are equal if they are same size and all characters are equal individually
-}
 */
 
 //operator ==
@@ -433,44 +254,9 @@ return 1; //strings are equal if they are same size and all characters are equal
 }
 
 /*
-//operator !=
-int operator!=(const char* l, const MyString& r)
-{
-	//convert c style string to MyString type
-	MyString temp(l);
-	int a=0;	
-
-	if(temp.len!=r.len) return 1;   //length is different, strings cant be equal
-
-	for(int i=0; i<temp.len; i++)
-	{
-		if(temp[i]==r[i])a++;
-	}
-if(a==temp.len) return 0; //each char in both strings is equal
-
-return 1; //strings are equal if they are same size and all characters are equal individually
-}
 */
 
 /*
-
-//operator !=
-int operator!=(const MyString& r,const char* l)
-{
-	//convert c style string to MyString type
-	MyString temp(l);
-	int a=0;
-
-	if(temp.len!=r.len) return 1;   //length is different, strings cant be equal
-
-	for(int i=0; i<temp.len; i++)
-	{
-		if(temp[i]==r[i])a++;
-	}
-if(a==temp.len) return 0;
-
-return 1; //strings are equal if they are same size and all characters are equal individually
-}
 */
 
 //operator !=
@@ -490,83 +276,9 @@ return 1; //strings are equal if they are same size and all characters are equal
 }
 
 /*
-//operator< not a member function of MyString so do not use scope operator on name
-int operator<=(const char* l,const MyString& r) 
-{
-//comparison should be lexicographical
-//convert l to MyString temporarily
-MyString temp(l);  //construct stack MyString object with l
-
-//compare lexicographically for the longest string
-if(temp.len > r.len)
-{
-	for(int i=0; i<temp.len; i++)
-	{	
-		if(temp[i]<r[i])
-		return 1;   //lhs IS less than rhs
-		
-		else if(temp[i]>r[i])
-		return 0;  //lhs IS greater than rhs
-		//otherwise keep iterating if elements of two strings are equal
-	}
-}
-
-else if(r.len >= temp.len)
-{
-	for(int i=0; i<r.len; i++)
-	{
-		if(temp[i]<r[i])
-		return 1;   //lhs IS less than rhs
-	
-		else if(temp[i]>r[i])
-		return 0;  //lhs IS greater than rhs
-
-		//otherwise keep iterating if elements of two strings are equal
-	}
-}
-//if all elements are the same , return false ,0
-return 1;
-}
 */
 
 /*
-//operator< not a member function of MyString so do not use scope operator on name
-int operator<=(const MyString& r,const char* l) 
-{
-//comparison should be lexicographical
-//convert l to MyString temporarily
-MyString temp(l);  //construct stack MyString object with l
-
-//compare lexicographically for the longest string
-if(temp.len > r.len)
-{
-	for(int i=0; i<temp.len; i++)
-	{	
-		if(temp[i]>r[i])
-		return 1;   //lhs IS less than rhs
-		
-		else if(temp[i]<r[i])
-		return 0;  //lhs IS greater than rhs
-		//otherwise keep iterating if elements of two strings are equal
-	}
-}
-
-else if(r.len >= temp.len)
-{
-	for(int i=0; i<r.len; i++)
-	{
-		if(temp[i]>r[i])
-		return 1;   //lhs IS less than rhs
-	
-		else if(temp[i]<r[i])
-		return 0;  //lhs IS greater than rhs
-
-		//otherwise keep iterating if elements of two strings are equal
-	}
-}
-//if all elements are the same , return false ,0
-return 1;
-}
 */
 
 //operator< not a member function of MyString so do not use scope operator on name
@@ -609,85 +321,10 @@ return 1;
 
 
 /*
-//operator> not a member function of MyString so do not use scope operator on name
-int operator>=(const char* l,const MyString& r) 
-{
-//comparison should be lexicographical
-//convert l to MyString temporarily
-MyString temp(l);  //construct stack MyString object with l
-
-//compare lexicographically for the longest string
-if(temp.len > r.len)
-{
-	for(int i=0; i<temp.len; i++)
-	{	
-		if(temp[i]>r[i])
-		return 1;   //lhs IS less than rhs
-		
-		else if(temp[i]<r[i])
-		return 0;  //lhs IS greater than rhs
-		//otherwise keep iterating if elements of two strings are equal
-	}
-}
-
-else if(r.len >= temp.len)
-{
-	for(int i=0; i<r.len; i++)
-	{
-		if(temp[i]>r[i])
-		return 1;   //lhs IS less than rhs
-	
-		else if(temp[i]<r[i])
-		return 0;  //lhs IS greater than rhs
-
-		//otherwise keep iterating if elements of two strings are equal
-	}
-}
-//if all elements are the same , return false ,0
-return 1;
-}
 */
 
 
 /*
-//operator< not a member function of MyString so do not use scope operator on name
-int operator>=(const MyString& r,const char* l) 
-{
-//comparison should be lexicographical
-//convert l to MyString temporarily
-MyString temp(l);  //construct stack MyString object with l
-
-//compare lexicographically for the longest string
-if(temp.len > r.len)
-{
-	for(int i=0; i<temp.len; i++)
-	{	
-		if(temp[i]<r[i])
-		return 1;   //lhs IS less than rhs
-		
-		else if(temp[i]>r[i])
-		return 0;  //lhs IS greater than rhs
-		//otherwise keep iterating if elements of two strings are equal
-	}
-}
-
-else if(r.len >= temp.len)
-{
-	for(int i=0; i<r.len; i++)
-	{
-		if(temp[i]<r[i])
-		return 1;   //lhs IS less than rhs
-	
-		else if(temp[i]>r[i])
-		return 0;  //lhs IS greater than rhs
-
-		//otherwise keep iterating if elements of two strings are equal
-	}
-}
-//if all elements are the same , return false ,0
-return 1;
-}
-
 */
 
 
